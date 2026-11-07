@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StudyLatte Study Tools: a simple Pomodoro timer and a curated free e-library.">
+  <meta name="theme-color" content="#244D40">
+  <title>Study Tools | StudyLatte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
+  <script src="data/resources.js" defer></script>
+  <script src="js/timer.js" defer></script>
+  <script src="js/library.js" defer></script>
+  <script src="js/lofi.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="site-header"></div>
+  <main id="main-content" class="container page-main tools-page" tabindex="-1">
+    <header class="tools-intro">
+      <p class="eyebrow">STUDYLATTE / STUDY TOOLS</p>
+      <h1>Find your focus. Feed your curiosity.</h1>
+      <p class="lead">Make time for deep work, then discover something new. Simple tools for a better study session.</p>
+      <nav class="tools-jump" aria-label="Study Tools sections">
+        <a class="btn btn-primary" href="#pomodoro">Focus timer</a>
+        <a class="btn btn-secondary" href="#lofi">StudyLatte Lo-Fi</a>
+        <a class="btn btn-secondary" href="#e-library">Free E-Library</a>
+      </nav>
+    </header>
+
+    <section id="pomodoro" class="tools-section" aria-labelledby="pomodoro-heading">
+      <div class="tools-section-heading">
+        <div><p class="eyebrow">01 / FOCUS WITH INTENTION</p><h2 id="pomodoro-heading">One session at a time.</h2><p>Work for 25 minutes, then take a 5-minute break. Pause whenever you need.</p></div>
+        <span class="tools-section-icon" aria-hidden="true">◷</span>
+      </div>
+      <div class="timer-layout">
+        <div class="timer-panel card">
+          <div class="timer-modes" role="group" aria-label="Timer mode">
+            <button type="button" id="focus-mode" class="timer-mode is-selected" aria-pressed="true">Focus · 25 min</button>
+            <button type="button" id="break-mode" class="timer-mode" aria-pressed="false">Break · 5 min</button>
+          </div>
+          <div class="timer-clock" id="timer-clock" role="timer" aria-label="Time remaining">
+            <div class="timer-clock-inner"><span id="timer-display">25:00</span><span id="timer-mode-label">FOCUS TIME</span></div>
+          </div>
+          <p id="timer-state" class="timer-state">Ready when you are.</p>
+          <div class="timer-actions">
+            <button type="button" class="btn btn-primary" id="timer-start">Start</button>
+            <button type="button" class="btn btn-secondary" id="timer-pause" disabled>Pause</button>
+            <button type="button" class="btn btn-secondary" id="timer-reset">Reset</button>
+          </div>
+          <p id="timer-completion" class="timer-completion" role="status" aria-live="polite" hidden></p>
+          <button type="button" class="btn btn-primary timer-next" id="timer-next" hidden>Start break</button>
+        </div>
+        <aside class="timer-tips card" aria-label="Study session tips">
+          <p class="eyebrow">A GENTLE ROUTINE</p>
+          <h3>Make this time yours.</h3>
+          <div class="tip-item"><span class="tip-number">01</span><p>Choose one task you want to finish.</p></div>
+          <div class="tip-item"><span class="tip-number">02</span><p>Put distractions aside while the timer runs.</p></div>
+          <div class="tip-item"><span class="tip-number">03</span><p>Take a short break when your focus session ends.</p></div>
+          <p class="timer-tip-note">The timer uses your device clock to stay accurate when you switch tabs. Keep this page open during a session.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="lofi" class="tools-section lofi-section" aria-labelledby="lofi-heading">
+      <div class="tools-section-heading">
+        <div><p class="eyebrow">02 / OPTIONAL BACKGROUND SOUND</p><h2 id="lofi-heading">StudyLatte Lo-Fi</h2><p>A little background sound for your focus session.</p></div>
+      </div>
+      <p class="lofi-notice" id="lofi-notice">Original AI-assisted instrumental audio created for the StudyLatte university project.</p>
+      <div class="lofi-grid" aria-label="Study audio moods">
+        <article class="lofi-card card" data-track="coffee" data-src="assets/audio/coffee-focus.mp3">
+          <div class="lofi-card-top"><span class="lofi-symbol" aria-hidden="true">☕</span><span class="lofi-current" hidden>Currently playing</span></div>
+          <h3>Coffee &amp; Focus</h3><p>Soft background sound for a calm work session.</p>
+          <button type="button" class="btn btn-secondary lofi-play" aria-label="Play Coffee and Focus" aria-pressed="false">Play</button>
+          <label for="lofi-volume-coffee">Volume</label><input id="lofi-volume-coffee" class="lofi-volume" type="range" min="0" max="100" value="50" aria-label="Coffee and Focus volume">
+          <p class="lofi-status" role="status">Ready to play</p>
+        </article>
+        <article class="lofi-card card" data-track="rainy" data-src="assets/audio/rainy-reading.mp3">
+          <div class="lofi-card-top"><span class="lofi-symbol" aria-hidden="true">☂</span><span class="lofi-current" hidden>Currently playing</span></div>
+          <h3>Rainy Reading</h3><p>A gentle mood for settling into a good book.</p>
+          <button type="button" class="btn btn-secondary lofi-play" aria-label="Play Rainy Reading" aria-pressed="false">Play</button>
+          <label for="lofi-volume-rainy">Volume</label><input id="lofi-volume-rainy" class="lofi-volume" type="range" min="0" max="100" value="50" aria-label="Rainy Reading volume">
+          <p class="lofi-status" role="status">Ready to play</p>
+        </article>
+        <article class="lofi-card card" data-track="night" data-src="assets/audio/late-night-study.mp3">
+          <div class="lofi-card-top"><span class="lofi-symbol" aria-hidden="true">☾</span><span class="lofi-current" hidden>Currently playing</span></div>
+          <h3>Late Night Study</h3><p>Unhurried sound for evening concentration.</p>
+          <button type="button" class="btn btn-secondary lofi-play" aria-label="Play Late Night Study" aria-pressed="false">Play</button>
+          <label for="lofi-volume-night">Volume</label><input id="lofi-volume-night" class="lofi-volume" type="range" min="0" max="100" value="50" aria-label="Late Night Study volume">
+          <p class="lofi-status" role="status">Ready to play</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="e-library" class="tools-section library-section" aria-labelledby="library-heading">
+      <div class="tools-section-heading">
+        <div><p class="eyebrow">03 / READ & DISCOVER</p><h2 id="library-heading">Your next good read starts here.</h2><p>A small, carefully selected collection of freely accessible books, textbooks and learning guides.</p></div>
+        <span class="tools-section-icon" aria-hidden="true">▤</span>
+      </div>
+      <div class="library-controls card">
+        <div class="form-field library-search-field"><label for="library-search">Search resources</label><input id="library-search" type="search" placeholder="Try a title, author or organisation…" autocomplete="off"></div>
+        <fieldset class="library-filter-fieldset"><legend>Browse by category</legend>
+          <div class="library-filters" id="library-filters" role="group" aria-label="Resource category">
+            <button type="button" class="library-filter is-selected" data-category="All" aria-pressed="true">All</button>
+            <button type="button" class="library-filter" data-category="Academic" aria-pressed="false">Academic</button>
+            <button type="button" class="library-filter" data-category="Programming" aria-pressed="false">Programming</button>
+            <button type="button" class="library-filter" data-category="Fiction / Classics" aria-pressed="false">Fiction / Classics</button>
+            <button type="button" class="library-filter" data-category="Personal Development / Learning" aria-pressed="false">Personal Development / Learning</button>
+          </div>
+        </fieldset>
+      </div>
+      <div class="library-results-top"><p id="library-count" role="status" aria-live="polite">Loading resources…</p><p class="library-disclaimer">External free resources · Opens on the publisher's website</p></div>
+      <div id="library-grid" class="library-grid" aria-label="Free resources"></div>
+      <div id="library-empty" class="library-empty card" hidden><h3>No resources found</h3><p>Try a different title, author or category.</p><button class="btn btn-secondary" type="button" id="library-clear">Clear filters</button></div>
+      <p class="library-legal">StudyLatte links to official free resources and does not host books or claim ownership of third-party material. External websites may have their own terms of use.</p>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>

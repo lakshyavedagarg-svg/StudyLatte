@@ -1,0 +1,181 @@
+/* StudyLatte responsive layout — mobile-first behaviour adjustments */
+@media (max-width: 1100px) {
+  .site-nav { gap: 14px; }
+  .nav-link { font-size: .85rem; }
+}
+@media (max-width: 900px) {
+  .container { width: min(calc(100% - 48px), var(--container-width)); }
+  .header-inner { min-height: 72px; flex-wrap: wrap; }
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+  .site-nav { display: none; flex-direction: column; align-items: stretch; gap: 4px; width: 100%; padding: 0 0 18px; }
+  .site-nav.is-open { display: flex; }
+  .nav-link { display: block; padding: 12px 14px; font-size: 1rem; border-bottom: none; border-left: 3px solid transparent; }
+  .nav-link[aria-current="page"] { background: #E6EDE3; border-left-color: var(--forest); }
+  .nav-link.nav-book { text-align: center; margin-top: 6px; }
+  .grid-4, .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-top { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+}
+@media (max-width: 600px) {
+  .container { width: calc(100% - 36px); }
+  .brand { font-size: 1.65rem; }
+  .page-main { padding-block: 56px 76px; }
+  h1 { font-size: clamp(2.2rem, 9vw, 2.7rem); }
+  h2 { font-size: 1.3rem; }
+  .lead { font-size: 1rem; }
+  .page-intro { margin-bottom: 28px; }
+  .card { padding: 22px; }
+  .placeholder-panel { flex-direction: column; gap: 16px; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .page-actions { flex-direction: column; }
+  .page-actions .btn { width: 100%; }
+  .footer-top { grid-template-columns: 1fr; gap: 26px; }
+  .site-footer { padding-top: 38px; }
+  .form-field input, .form-field select, .form-field textarea { font-size: 16px; }
+}
+
+/* ===== Stage 2: Homepage responsiveness ===== */
+@media (max-width: 1100px) {
+  .hero-grid { gap: 35px; }
+  .availability-layout { gap: 36px; }
+  .zone-card-body { padding: 18px; }
+}
+@media (max-width: 900px) {
+  .hero-grid { min-height: auto; grid-template-columns: 1fr 1fr; gap: 25px; }
+  .hero-art { height: 400px; }
+  .home-page .home-section { padding-block: 70px; }
+  .home-page .zone-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .availability-layout { grid-template-columns: 1fr; }
+  .availability-copy h2 { max-width: 25ch; }
+}
+@media (max-width: 700px) {
+  .hero-grid { grid-template-columns: 1fr; padding-block: 56px; }
+  .home-page .hero-copy h1 { font-size: clamp(2.8rem,10vw,4rem); }
+  .hero-art { height: 370px; max-width: 520px; width: 100%; margin-inline: auto; }
+  .home-page .heading-split { align-items: start; flex-direction: column; gap: 8px; }
+  .home-page .activity-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .feature-card { padding: 25px; }
+}
+@media (max-width: 600px) {
+  .home-page .home-section { padding-block: 58px; }
+  .home-page .section-heading { margin-bottom: 24px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; }
+  .hero-art { height: 320px; border-radius: 120px 120px 20px 20px; }
+  .art-caption { font-size: .85rem; }
+  .home-page .activity-grid,.home-page .zone-grid { grid-template-columns: 1fr; }
+  .activity-card { min-height: 160px; }
+  .zone-card-body p { min-height: 0; }
+  .availability-panel { padding: 21px; }
+  .availability-row { align-items: flex-start; }
+  .availability-row div > span { max-width: 25ch; }
+  .feature-card { flex-direction: column; gap: 16px; }
+  .home-page .menu-preview-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== Stage 3: Explore Spaces responsive layout ===== */
+@media (max-width: 900px) {
+  .spaces-hero-layout { gap: 25px; padding-block: 68px; }
+  .spaces-hero-art { min-height: 300px; }
+  .finder-options { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .availability-spaces-layout { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 700px) {
+  .spaces-hero-layout { grid-template-columns: 1fr; padding-block: 55px; }
+  .spaces-hero-art { min-height: 255px; max-width: 500px; width: 100%; }
+  .spaces-zone-grid { grid-template-columns: 1fr; }
+  .finder-facts { grid-template-columns: 1fr; gap: 8px; }
+}
+@media (max-width: 600px) {
+  .spaces-page .spaces-section { padding-block: 56px; }
+  .spaces-hero h1 { font-size: clamp(2.5rem,10vw,3.5rem); }
+  .finder-options { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .finder-option { min-height: 142px; padding: 13px; }
+  .finder-option-icon { width: 40px; height: 40px; font-size: 1.45rem; margin-bottom: 8px; }
+  .finder-option-title { font-size: .9rem; }
+  .finder-option-subtitle { font-size: .77rem; }
+  .finder-result { padding: 19px; }
+  .finder-result .btn { width: 100%; }
+  .space-detail-body { padding: 21px; }
+  .zone-specs > div { grid-template-columns: 86px minmax(0,1fr); }
+  .spaces-availability-panel { padding: 20px; }
+  .spaces-art-book { font-size: 6rem; }
+  .spaces-art-cup { font-size: 5rem; }
+}
+@media (max-width: 350px) { .finder-options { grid-template-columns: 1fr; } }
+
+/* ===== Stage 4: Booking responsive styles ===== */
+@media (max-width: 900px) {
+  .booking-steps { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .booking-heading-row { align-items: start; flex-direction: column; }
+}
+@media (max-width: 650px) {
+  .booking-page { padding-block: 50px 70px; }
+  .booking-intro { padding-bottom: 28px; }
+  .booking-steps { gap: 8px; }
+  .booking-steps li { font-size: .75rem; padding: 10px; }
+  .booking-fieldset { padding: 20px 16px; }
+  .room-options,.booking-fields-two { grid-template-columns: 1fr; gap: 15px; }
+  .room-art { min-height: 100px; }
+  .booking-attendees { max-width: none; }
+  .booking-confirm-step,.booking-confirmation { padding: 20px; }
+  .booking-submit { width: 100%; }
+  .saved-booking { align-items: stretch; flex-direction: column; }
+  .saved-booking .btn { width: 100%; }
+  .my-bookings-section { padding-top: 55px; }
+}
+
+/* ===== Stage 5: Study Tools responsive layouts ===== */
+@media (max-width: 1000px) {
+  .timer-layout { grid-template-columns: 1fr; }
+  .library-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 650px) {
+  .tools-page { padding-top: 48px; }
+  .tools-intro { padding-bottom: 30px; }
+  .tools-section { padding-block: 30px 55px; }
+  .tools-section-heading { align-items: flex-start; }
+  .tools-section-icon { display: none; }
+  .timer-panel { padding: 25px 14px; }
+  .timer-modes { width: 100%; }
+  .timer-mode { flex: 1; padding-inline: 8px; }
+  .timer-clock { width: min(265px,100%); }
+  .timer-actions { width: 100%; }
+  .timer-actions .btn { flex: 1 1 105px; padding-inline: 10px; }
+  .timer-next { width: 100%; }
+  .timer-tips { padding: 25px 20px; }
+  .library-controls { padding: 20px 16px; }
+  .library-results-top { flex-direction: column; gap: 3px; }
+  .library-grid { grid-template-columns: 1fr; }
+  .library-card { padding: 22px; }
+  .tools-jump .btn { flex: 1 1 150px; }
+}
+
+/* ===== Stage 6 responsive layout ===== */
+@media (max-width: 1000px) {
+  .menu-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .facility-grid,.how-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .about-contact-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width: 650px) {
+  .stage6-page { padding-top:48px; padding-bottom:55px; }
+  .stage6-intro { margin-bottom:30px; }
+  .stage6-section-heading { flex-direction:column; align-items:start; gap:4px; }
+  .menu-grid,.facility-grid,.how-grid,.about-contact-grid,.about-story { grid-template-columns:1fr; }
+  .menu-item-art { min-height:115px; }
+  .menu-filters { gap:8px; }
+  .menu-filter { flex:1 1 auto; }
+  .about-story { gap:18px; margin-bottom:45px; }
+  .about-story-art { min-height:180px; }
+  .stage6-section { margin:50px 0; }
+  .stage6-cta { flex-direction:column; align-items:stretch; margin-top:45px; padding:23px; }
+  .stage6-cta .btn { width:100%; }
+  .stage6-cta-actions { flex-direction:column; }
+}
+
+/* Lo-Fi cards adapt to tablet and mobile screens. */
+@media (max-width:1000px) { .lofi-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:650px) { .lofi-grid { grid-template-columns:1fr; } .lofi-card { padding:20px; } .lofi-card .lofi-play { width:100%; } }
+
+/* Final responsive team grid */
+@media (max-width:900px) {.team-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}}
+@media (max-width:540px) {.team-grid {grid-template-columns:1fr;gap:14px;}.team-card {padding:22px 16px;}}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Book a StudyLatte discussion room in this browser-only university project demo.">
+  <meta name="theme-color" content="#244D40">
+  <title>Book a Room | StudyLatte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/booking.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="site-header"></div>
+  <main id="main-content" class="booking-page" tabindex="-1">
+    <section class="container booking-intro">
+      <p class="eyebrow">STUDYLATTE / ROOM RESERVATIONS</p>
+      <h1>A little room for big ideas.</h1>
+      <p class="lead">Bring your project group together in a comfortable private space. Choose a room and a time that works for you.</p>
+      <div class="booking-notice" role="note"><strong>University project demo:</strong> Bookings are saved in this browser only. They are not shared between devices, may disappear if browser storage is cleared, and are <strong>not real café reservations</strong>.</div>
+    </section>
+    <section class="container booking-content" aria-labelledby="booking-heading">
+      <div class="booking-heading-row"><div><p class="eyebrow">YOUR SESSION</p><h2 id="booking-heading">Book a discussion room</h2></div><p class="booking-hours">Demo hours: 9:00 AM – 9:00 PM · One-hour slots</p></div>
+      <ol class="booking-steps" aria-label="Booking steps"><li><span>1</span> Choose Room</li><li><span>2</span> Date &amp; Time</li><li><span>3</span> Your Details</li><li><span>4</span> Confirm</li></ol>
+      <form id="booking-form" novalidate>
+        <fieldset class="booking-fieldset" aria-describedby="room-error"><legend><span class="step-number">01</span> Choose your room</legend>
+          <div class="room-options">
+            <label class="room-option"><input type="radio" name="room" value="room-small" required><span class="room-option-body"><span class="room-art room-art-small" aria-hidden="true">✦</span><span class="room-option-title">Small Discussion Room</span><span class="room-option-description">For focused conversations and smaller teams.</span><span class="room-option-meta">2–4 students · Wi-Fi · Whiteboard · Charging points</span><span class="room-option-select">Select this room <span aria-hidden="true">→</span></span></span></label>
+            <label class="room-option"><input type="radio" name="room" value="room-large"><span class="room-option-body"><span class="room-art room-art-large" aria-hidden="true">✦</span><span class="room-option-title">Large Meeting Room</span><span class="room-option-description">More space for bigger group discussions.</span><span class="room-option-meta">5–8 students · Wi-Fi · Whiteboard · Charging points</span><span class="room-option-select">Select this room <span aria-hidden="true">→</span></span></span></label>
+          </div><p id="room-error" class="form-error booking-error" aria-live="polite"></p>
+        </fieldset>
+        <fieldset class="booking-fieldset"><legend><span class="step-number">02</span> Choose date &amp; time</legend>
+          <div class="booking-fields-two"><div class="form-field"><label for="booking-date">Booking date <span aria-hidden="true">*</span></label><input id="booking-date" name="date" type="date" required aria-describedby="date-hint date-error"><span id="date-hint" class="form-hint">Today or a future date.</span><span id="date-error" class="form-error booking-error" aria-live="polite"></span></div><div class="form-field"><label for="booking-time">One-hour time slot <span aria-hidden="true">*</span></label><select id="booking-time" name="time" required aria-describedby="time-hint time-error"><option value="">Choose a room and date first</option></select><span id="time-hint" class="form-hint">Booked and elapsed slots are unavailable.</span><span id="time-error" class="form-error booking-error" aria-live="polite"></span></div></div>
+        </fieldset>
+        <fieldset class="booking-fieldset"><legend><span class="step-number">03</span> Enter your details</legend>
+          <div class="booking-fields-two"><div class="form-field"><label for="student-name">Your name <span aria-hidden="true">*</span></label><input id="student-name" name="studentName" type="text" maxlength="80" autocomplete="name" required aria-describedby="name-error"><span id="name-error" class="form-error booking-error" aria-live="polite"></span></div><div class="form-field"><label for="student-email">Email address <span aria-hidden="true">*</span></label><input id="student-email" name="email" type="email" maxlength="254" autocomplete="email" required aria-describedby="email-error"><span id="email-error" class="form-error booking-error" aria-live="polite"></span></div></div>
+          <div class="form-field booking-attendees"><label for="attendees">Number of attendees <span aria-hidden="true">*</span></label><input id="attendees" name="attendees" type="number" min="2" max="8" step="1" required aria-describedby="attendees-hint attendees-error"><span id="attendees-hint" class="form-hint">Small room: 2–4 · Large room: 5–8.</span><span id="attendees-error" class="form-error booking-error" aria-live="polite"></span></div>
+        </fieldset>
+        <section class="booking-confirm-step" aria-labelledby="confirm-step-heading"><h3 id="confirm-step-heading"><span class="step-number">04</span> Review &amp; confirm</h3><div id="booking-summary" class="booking-summary" aria-live="polite">Choose a room and time to preview your booking.</div><p id="booking-form-error" class="form-error booking-error" role="alert"></p><button class="btn btn-primary booking-submit" type="submit">Confirm Demo Booking</button><p class="form-hint">This saves a demonstration booking to your browser; no email will be sent.</p></section>
+      </form>
+      <section id="booking-confirmation" class="booking-confirmation" aria-labelledby="confirmation-title" hidden tabindex="-1"><span class="booking-success-icon" aria-hidden="true">✓</span><h2 id="confirmation-title">Your demo booking is saved!</h2><div id="confirmation-details"></div><p class="booking-confirm-warning"><strong>Demo booking saved in this browser only. This is not a real café reservation.</strong></p><button id="new-booking" class="btn btn-secondary" type="button">Make another booking</button></section>
+    </section>
+    <section class="container my-bookings-section" aria-labelledby="my-bookings-title"><div class="booking-heading-row"><div><p class="eyebrow">YOUR BROWSER</p><h2 id="my-bookings-title">My Demo Bookings</h2></div></div><p class="form-hint">Only bookings stored on this browser are shown. Cancel a booking to free its time slot.</p><div id="my-bookings-list" aria-live="polite"></div></section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>

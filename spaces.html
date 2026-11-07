@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore StudyLatte's Focus, Reading, Collaboration and Meeting spaces and find the right zone for your activity.">
+  <meta name="theme-color" content="#244D40">
+  <title>Explore Spaces | StudyLatte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/space-finder.js" defer></script>
+</head>
+<body class="spaces-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="site-header"></div>
+  <main id="main-content" tabindex="-1">
+    <section class="spaces-hero" aria-labelledby="spaces-page-title">
+      <div class="container spaces-hero-layout">
+        <div>
+          <p class="eyebrow">STUDYLATTE / EXPLORE SPACES</p>
+          <h1 id="spaces-page-title">A space for every way you work.</h1>
+          <p class="lead">Some days call for quiet focus. Others need a good book, a team around the table, or a room to talk things through. Find your kind of corner at StudyLatte.</p>
+          <a class="btn btn-primary" href="#space-finder">Find my space <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="spaces-hero-art" role="img" aria-label="Illustration of a café study table with books, a laptop and a coffee cup">
+          <span class="spaces-art-circle" aria-hidden="true"></span><span class="spaces-art-book" aria-hidden="true">▤</span><span class="spaces-art-cup" aria-hidden="true">☕</span><span class="spaces-art-note" aria-hidden="true">Make room for ideas.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="spaces-section spaces-finder-section" id="space-finder" aria-labelledby="finder-heading">
+      <div class="container">
+        <div class="spaces-section-heading">
+          <p class="eyebrow">LET'S FIND YOUR CORNER</p>
+          <h2 id="finder-heading">What do you want to do?</h2>
+          <p>Choose one activity. We'll suggest a space based on what it's designed for.</p>
+        </div>
+        <!-- Native buttons support keyboard activation with Enter and Space. -->
+        <div class="finder-options" role="group" aria-label="Choose your activity">
+          <button class="finder-option" type="button" data-activity="study" aria-pressed="false"><span class="finder-option-icon" aria-hidden="true">✎</span><span class="finder-option-title">Study Alone</span><span class="finder-option-subtitle">Find your focus</span></button>
+          <button class="finder-option" type="button" data-activity="read" aria-pressed="false"><span class="finder-option-icon" aria-hidden="true">▤</span><span class="finder-option-title">Read</span><span class="finder-option-subtitle">Slow down with a book</span></button>
+          <button class="finder-option" type="button" data-activity="group" aria-pressed="false"><span class="finder-option-icon" aria-hidden="true">✳</span><span class="finder-option-title">Group Project</span><span class="finder-option-subtitle">Create together</span></button>
+          <button class="finder-option" type="button" data-activity="meeting" aria-pressed="false"><span class="finder-option-icon" aria-hidden="true">▦</span><span class="finder-option-title">Meeting</span><span class="finder-option-subtitle">Talk it through</span></button>
+        </div>
+        <div class="finder-empty" id="finder-empty">Select an activity above to see your recommended zone.</div>
+        <!-- JS reveals this result without navigating or reloading the page. -->
+        <section class="finder-result" id="finder-result" aria-labelledby="recommendation-title" hidden>
+          <div class="finder-result-top"><span class="eyebrow">YOUR RECOMMENDED SPACE</span><span class="finder-result-badge">Matched to your activity</span></div>
+          <h3 id="recommendation-title" tabindex="-1"></h3>
+          <p id="recommendation-reason" class="finder-reason"></p>
+          <dl class="finder-facts"><div><dt>Noise level</dt><dd id="recommendation-noise"></dd></div><div><dt>Facilities</dt><dd id="recommendation-facilities"></dd></div><div><dt>Capacity</dt><dd id="recommendation-capacity"></dd></div></dl>
+          <a class="btn btn-primary" id="recommendation-action" href="#zones">View zone details</a>
+        </section>
+      </div>
+    </section>
+
+    <section class="spaces-section spaces-zones-section" id="zones" aria-labelledby="zones-heading">
+      <div class="container">
+        <div class="spaces-section-heading"><p class="eyebrow">FOUR WAYS TO SETTLE IN</p><h2 id="zones-heading">Explore our spaces</h2><p>Different environments, one shared goal: making your time feel well spent.</p></div>
+        <div class="spaces-zone-grid">
+          <article class="space-detail-card" id="focus-zone" aria-labelledby="focus-title"><div class="space-detail-art zone-focus" aria-hidden="true"><span>✎</span><small>01 / FOCUS</small></div><div class="space-detail-body"><p class="eyebrow">SILENT &amp; INDIVIDUAL</p><h3 id="focus-title">Focus Zone</h3><p>A quiet place for deep concentration, coding, assignments and focused laptop work.</p><dl class="zone-specs"><div><dt>Noise</dt><dd>Silent</dd></div><div><dt>Facilities</dt><dd>Wi-Fi, charging points, individual desks</dd></div><div><dt>Best for</dt><dd>Studying, coding, assignments</dd></div><div><dt>Capacity</dt><dd>20 seats (illustrative)</dd></div></dl><a class="zone-detail-link" href="#sample-availability">See sample availability <span aria-hidden="true">↗</span></a></div></article>
+          <article class="space-detail-card" id="reading-zone" aria-labelledby="reading-title"><div class="space-detail-art zone-reading" aria-hidden="true"><span>▤</span><small>02 / READING</small></div><div class="space-detail-body"><p class="eyebrow">CALM &amp; COMFORTABLE</p><h3 id="reading-title">Reading Zone</h3><p>Sink into a comfortable seat and enjoy books, articles or relaxed individual reading.</p><dl class="zone-specs"><div><dt>Noise</dt><dd>Low</dd></div><div><dt>Facilities</dt><dd>Comfortable seating, Wi-Fi, reading lights</dd></div><div><dt>Best for</dt><dd>Books, articles, relaxed reading</dd></div><div><dt>Capacity</dt><dd>15 seats (illustrative)</dd></div></dl><a class="zone-detail-link" href="#sample-availability">See sample availability <span aria-hidden="true">↗</span></a></div></article>
+          <article class="space-detail-card" id="collaboration-zone" aria-labelledby="collaboration-title"><div class="space-detail-art zone-collab" aria-hidden="true"><span>✳</span><small>03 / COLLABORATE</small></div><div class="space-detail-body"><p class="eyebrow">SHARE &amp; CREATE</p><h3 id="collaboration-title">Collaboration Zone</h3><p>Pull up a chair with your team for brainstorming, assignments and project work.</p><dl class="zone-specs"><div><dt>Noise</dt><dd>Discussion allowed</dd></div><div><dt>Facilities</dt><dd>Group tables, Wi-Fi, charging points</dd></div><div><dt>Best for</dt><dd>Teamwork, brainstorming, projects</dd></div><div><dt>Capacity</dt><dd>16 seats (illustrative)</dd></div></dl><a class="zone-detail-link" href="#sample-availability">See sample availability <span aria-hidden="true">↗</span></a></div></article>
+          <article class="space-detail-card" id="meeting-rooms" aria-labelledby="meeting-title"><div class="space-detail-art zone-meeting" aria-hidden="true"><span>▦</span><small>04 / MEET</small></div><div class="space-detail-body"><p class="eyebrow">PRIVATE &amp; PURPOSEFUL</p><h3 id="meeting-title">Meeting Rooms</h3><p>Enclosed spaces for private discussions, planning sessions and group meetings.</p><dl class="zone-specs"><div><dt>Noise</dt><dd>Private / enclosed discussion</dd></div><div><dt>Facilities</dt><dd>Whiteboard, Wi-Fi, charging points</dd></div><div><dt>Best for</dt><dd>Meetings, group discussions</dd></div><div><dt>Capacity</dt><dd>Small room: 2–4 · Large room: 5–8</dd></div></dl><a class="btn btn-primary" href="booking.html">Book a Room <span aria-hidden="true">↗</span></a><p class="booking-note">Try the browser-only demo booking system; no real reservation is made.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spaces-section spaces-availability-section" id="sample-availability" aria-labelledby="availability-heading">
+      <div class="container availability-spaces-layout"><div><p class="eyebrow">PLAN AHEAD</p><h2 id="availability-heading">A preview of the possibilities.</h2><p>Here's how students could compare seating before a visit. These numbers are fixed examples for our university project.</p><span class="demo-label">SAMPLE / DEMO DATA — NOT LIVE</span></div>
+      <div class="spaces-availability-panel"><h3>Illustrative seating availability</h3><p class="availability-disclaimer">Not real-time occupancy. Values are not connected to sensors or bookings.</p>
+        <div class="availability-row"><div><strong>Focus Zone</strong><span>12 of 20 sample seats available</span></div><span class="status-pill available">Available</span></div>
+        <div class="availability-row"><div><strong>Reading Zone</strong><span>3 of 15 sample seats available</span></div><span class="status-pill limited">Limited</span></div>
+        <div class="availability-row"><div><strong>Collaboration Zone</strong><span>10 of 16 sample seats available</span></div><span class="status-pill available">Available</span></div>
+        <div class="availability-row"><div><strong>Meeting Rooms</strong><span>Check room slots in the browser-only booking demo</span></div><span class="status-pill neutral">Browser demo</span></div>
+      </div></div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
